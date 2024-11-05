@@ -5,7 +5,7 @@ function readFromFile(){
 
     //check if it was opened
     if($file){
-        echo "Content read of example.txt: ";
+        echo "Contents: ";
 
         //read file until the end (eof)
         while(!feof($file)){
