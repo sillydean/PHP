@@ -24,7 +24,9 @@ try{
 
     $pdo -> exec($sql);
 
-    echo "Success new record added";
+    $last_id = $pdo -> lastInsertID();
+
+    echo "Success new record added, last ID is: ". $last_id;
 }catch(DOException $e){
     // echo "Table not created ". $e->getMessage();
 
