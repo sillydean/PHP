@@ -24,7 +24,7 @@ if(!$result){
         <div class="content-container">
         <h2>Product Dashboard</h2>
 
-        <a href = '#' class = 'btn btn-warning btn-sm'>Add a product</a>
+        <a href = "add.php?id={$row['id']}" class = 'btn btn-warning btn-sm'>Add a product</a>
 
         <table class="table table-striped table-hover">
             <thead>

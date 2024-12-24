@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     if(empty($title) || empty($description) || empty($quantity) || empty($price)){
         $error = "All fields required.";
     }else{
-        $update_sql = "UPDATE product SET title = '$title', description = '$description', quantity = '$quantity', price = '$price' WHERE id='$id'"
+        $update_sql = "UPDATE product SET title = '$title', description = '$description', quantity = '$quantity', price = '$price' WHERE id='$id'";
         if($conn->query($update_sql)){
         $success = "Product updated succesfully!";
         //Refresh data
@@ -29,7 +29,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $product['description']=$description;
         $product['quantity']=$quantity;
         $product['price']=$price;
-
+        
+        header("Location:dashboard.php");
+        exit();
     }else{
             $error = "Error updating product: ".$conn->error();
         }
@@ -66,7 +68,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                 </div>
                 <div class="mb-3">
                     <label for="price" class="form-label">Price</label>
-                    <input type="number" class="form-control" name="price" value="Price" required>
+                    <input type="number" class="form-control" name="price" value="Price" step="any" required>
                 </div>
                 <button type="submit" class="btn btn-primary w-100">Update</button>
             </form>
