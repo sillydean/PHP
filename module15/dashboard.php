@@ -55,7 +55,7 @@ if(!$result){
                               </tr>";
                     }
                 } else{
-                    echo "<tr><td colspan = '4' class = 'text-center'> No users found </td> </tr>";
+                    echo "<tr><td colspan = '4' class = 'text-center'> No products found </td> </tr>";
                 }
                 ?>
             </tbody>
