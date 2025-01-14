@@ -36,7 +36,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     if(empty($username) || empty($email)){
         $error = "All fields required.";
     }else{
-        $update_sql = "UPDATE users SET username = '$username', email = '$email' WHERE id='$id'"
+        $update_sql = "UPDATE users SET username = '$username', email = '$email' WHERE id='$id'";
         if($conn->query($update_sql)){
         $success = "User updated succesfully!";
         //Refresh data

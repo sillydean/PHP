@@ -54,21 +54,22 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         <div class="card shadow-sm p-4">
             <h2 class="text-center mb-4">Edit Product</h2>
             <form method="POST">
+                <div class=""></div>
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
-                    <input type="text" class="form-control" name="title" value="Title" required>
+                    <input type="text" class="form-control" name="title" value="title" required>
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
-                    <input type="text" class="form-control" name="description" value="Description" required>
+                    <input type="text" class="form-control" name="description" value="description" required>
                 </div>
                 <div class="mb-3">
                     <label for="quantity" class="form-label">Quantity</label>
-                    <input type="number" class="form-control" name="quantity" value="Quantity" required>
+                    <input type="number" class="form-control" name="quantity" value="quantity" required>
                 </div>
                 <div class="mb-3">
                     <label for="price" class="form-label">Price</label>
-                    <input type="number" class="form-control" name="price" value="Price" step="any" required>
+                    <input type="number" class="form-control" name="price" value="price" step="any" required>
                 </div>
                 <button type="submit" class="btn btn-primary w-100">Update</button>
             </form>
