@@ -9,7 +9,7 @@
     $selectUsers = $conn->prepare($sql);
     $selectUsers->execute();
 
-    $users_data = $selectUsers->fetchAll();
+    //$users_data = $selectUsers->fetchAll();
 ?>
 
 <!DOCTYPE html>
