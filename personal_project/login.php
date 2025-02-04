@@ -34,14 +34,12 @@
     <title>Login</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
     <style>
-        /* Background gradient for the entire page */
         body {
             background: linear-gradient(135deg,rgb(43, 18, 96), black);
             color: #fff;
             font-family: 'Arial', sans-serif;
         }
 
-        /* Center card with smooth edges and gradient border */
         .card {
             background-color: #fff;
             border-radius: 15px;
@@ -57,7 +55,6 @@
             transition: all 0.3s ease;
         }
 
-        /* Stylish buttons */
         .btn-primary {
             background: linear-gradient(to right,rgb(43, 18, 96), black);
             border: none;
@@ -69,7 +66,6 @@
             transform: scale(1.05);
         }
 
-        /* Links with hover effect */
         a {
             color: #6a11cb;
             text-decoration: none;
@@ -78,10 +74,9 @@
         }
 
         a:hover {
-            color: #4B5945;
+            color:rgb(78, 47, 138);
         }
 
-        /* Inputs styling */
         input.form-control {
             border-radius: 10px;
             border: 1px solid #ddd;
@@ -89,13 +84,12 @@
         }
 
         input.form-control:focus {
-            border-color: #4B5945;
-            box-shadow: 0 0 8px #91AC8F;
+            border-color:rgb(48, 27, 102);
+            box-shadow: 0 0 8px rgb(38, 23, 74);
         }
 
-        /* Title */
         h2 {
-            color: #4B5945;
+            color:rgb(72, 69, 89);
         }
     </style>
 </head>
