@@ -1,16 +1,15 @@
 <?php
-require_once("config.php");
-s
-$success="";
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    $username= mysqli_real_escape_string($conn, $_POST['username']);
-    $email= mysqli_real_escape_string($conn, $_POST['email']);
-    $password= mysqli_real_escape_string($conn, $_POST['password']);
+    require_once("config.php");
+    $success = "";
+    if($_SERVER["REQUEST_METHOD"]=="POST"){
+        $username = mysqli_real_escape_string($conn, $_POST['username']);
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-    if(empty($username) ||empty($email) ||empty($password)){
-        $error = "All fields are required!";
-    }else{
-        $checkuser="SELECT * FROM users WHERE username='$username' or email='$email'";
+        if(empty($username) || empty($password) || empty($email)){
+            $error = "All fields are required.";
+        }else{
+            $checkuser="SELECT * FROM users WHERE username='$username' or email='$email'";
         $result = $conn->query($checkuser);
 
         if($result->num_rows>0){
@@ -19,17 +18,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $hashed_password = md5($password);
                 $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email','$hashed_password')";
                 if($conn->query($sql)==TRUE){
-                    $success = "Registration successful! YOu can now <a href='login.php'>Login here!</a>";
+                    $success = "Registration successful! You can now <a href='login.php'>Login here!</a>";
 
                 }else{
                     $error = "Error: ".$conn->error;
-                }
-        }
-    }
+                };
+        };
+
+    };
 }
-
-
-?>
+    ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +39,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <style>
         /* Background gradient for the entire page */
         body {
-            background: linear-gradient(135deg, #66785F, white);
+            background: linear-gradient(135deg,rgb(111, 95, 120), black);
             color: #fff;
             font-family: 'Arial', sans-serif;
         }
@@ -49,29 +47,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         /* Center card with smooth edges and gradient border */
         .card {
             background-color: #fff;
-            border-radius: 15px;
+            border-radius: 5px;
             padding: 20px;
-            box-shadow: 0 4px 10px #91AC8F;
+            box-shadow: 0 4px 10px rgb(158, 143, 172);
             border: 2px solid transparent;
             background-clip: padding-box;
         }
 
-        .card:hover {
-            border-image: linear-gradient(to right, #66785F, #B2C9AD) 1;
-            transform: translateY(-5px);
-            transition: all 0.3s ease;
-        }
-
         /* Stylish buttons */
         .btn-primary {
-            background: linear-gradient(to right, #66785F, #B2C9AD);
+            background: linear-gradient(to right, rgb(107, 95, 120),black);
             border: none;
             transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background: linear-gradient(to right, #66785F, #B2C9AD);
-            transform: scale(1.05);
         }
 
         /* Links with hover effect */
@@ -83,7 +70,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
 
         a:hover {
-            color: #4B5945;
+            color:rgb(81, 69, 89);
         }
 
         /* Inputs styling */
@@ -94,13 +81,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
 
         input.form-control:focus {
-            border-color: #4B5945;
-            box-shadow: 0 0 8px #91AC8F;
+            border-color:rgb(82, 69, 89);
+            box-shadow: 0 0 8px rgb(156, 143, 172);
         }
 
         /* Title */
         h2 {
-            color: #4B5945;
+            color:rgb(79, 69, 89);
         }
     </style>
 </head>
@@ -126,7 +113,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <button type="submit" class="btn btn-primary w-100">Register</button>
         </form>
         <div class="text-center mt-3">
-            <p>Already have an account? <a style="color: #4B5945" href="login.php">Login here</a></p>
+            <p>Already have an account? <a style="color:rgb(80, 69, 89)" href="login.php">Login here</a></p>
         </div>
     </div>
 </body>
