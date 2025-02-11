@@ -1,6 +1,17 @@
 <?php
     require_once("config.php");
     session_start();
+    if (isset($_POST['submit'])){
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+    
+        if(empty($username) || empty($password)){
+            echo "Please fill in all of the spaces!";
+        } else{
+            
+        }
+    };
+
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         $username = $_POST['username'];
         $password = md5($_POST['password']); //Hash the password
@@ -15,8 +26,11 @@
             $_SESSION['admin_logged_in'] = true;
             header("Location: admin.php");
             exit();
+        }else if($result->num_rows>1){
+            header("Location: index.php");
+            exit();
         }else{
-            $error = "Invalid Username or Password";
+            $error = "Invalid username or password!";
         }
     }
 ?>
